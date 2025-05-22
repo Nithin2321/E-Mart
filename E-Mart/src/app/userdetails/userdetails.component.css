@@ -1,0 +1,21 @@
+.user{
+    height: 50vh;
+    background-color: #F6F6F6;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+.table{
+    width: 70%;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover{
+  background-color: red;
+  font-size: larger;
+}

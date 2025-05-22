@@ -1,0 +1,45 @@
+<div>
+  <app-header></app-header>
+</div>
+<div class="order">
+<div class="container mt-4">
+  <h3>Your Orders</h3>
+  <div *ngIf="orders.length > 0; else noOrders">
+    <div *ngFor="let order of orders" class="card mb-3 shadow-sm">
+      <div class="card-header">
+        <strong>Order ID:</strong> {{ order.id }} |
+        <strong>Date:</strong> {{ order.orderDate | date:'medium' }} |
+        <strong>Total:</strong> ${{ order.totalAmount }}
+      </div>
+      <div class="card-body">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Image</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of order.items">
+              <td>{{ item.product.name }}</td>
+              <td><img [src]="item.product.imageUrl" width="60" /></td>
+              <td>{{ item.quantity }}</td>
+              <td>${{ item.price }}</td>
+              <td>${{ item.quantity * item.price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ng-template #noOrders>
+    <p>No orders found.</p>
+  </ng-template>
+</div>
+</div>
+<div>
+   <app-footer></app-footer>
+</div>

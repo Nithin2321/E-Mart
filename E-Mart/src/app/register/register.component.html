@@ -1,0 +1,54 @@
+<div>
+    <app-header></app-header>
+</div>
+<div class="register_component">
+ <form action="/login" [formGroup]="UserReg" (ngSubmit)="onSubmit()" method="post">
+    <div class="register_component__header">Registration</div>
+    <div class="formfields">
+        UserName :<input type="text" name="User" placeholder="Enter Name" formControlName="name">
+        <div *ngIf="UserReg.get('name')?.invalid && UserReg.get('name')?.touched" style="color: red;">
+           <small *ngIf="UserReg.get('name')?.errors?.['required']">name required</small>
+        </div>
+        Email :<input type="text" name="Email" placeholder="Enter Email" formControlName="email">
+        <div *ngIf="UserReg.get('email')?.invalid && UserReg.get('email')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('email')?.errors?.['required']">email required</small>
+            <small *ngIf="UserReg.get('email')?.errors?.['email']">email format required</small>
+         </div>
+        Mobile No. :<input type="tel" name="Phone" placeholder="Enter Mobile Number" formControlName="phone">
+        <div *ngIf="UserReg.get('phone')?.invalid && UserReg.get('phone')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('phone')?.errors?.['required']">phone required</small>
+            <small *ngIf="UserReg.get('phone')?.errors?.['pattern']">Enter valid Numbers</small>
+         </div>
+        Role :<select formControlName="role">
+            <option value="CUSTOMER">Customer</option>
+            <option value="VENDOR">Vendor</option>
+          </select>  
+        Password :<input type="password" name="password" placeholder="Enter Password" formControlName="password">
+        <div *ngIf="UserReg.get('password')?.invalid && UserReg.get('password')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('password')?.errors?.['required']">password required</small>
+            <small *ngIf="UserReg.get('password')?.errors?.['minlength']">Minimum length 8</small>
+         </div>  
+        Confirm Password :<input type="password" name="password" placeholder="Confirm Password" formControlName="confirmPassword">
+        <div *ngIf="UserReg.get('confirmPassword')?.invalid && UserReg.get('confirmPassword')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('confirmPassword')?.errors?.['required']">confirmPassword required</small>
+            <small *ngIf="UserReg.get('confirmPassword')?.errors?.['minlength']">Minimum length 8</small>
+         </div>
+        OTP : <input type="text" name="otp" placeholder="Enter OTP" maxlength="4" required>  
+        Area PinCode : <input type="text" name="pincode" placeholder="Enter Pincode" formControlName="pincode">
+        <div *ngIf="UserReg.get('pincode')?.invalid && UserReg.get('pincode')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('pincode')?.errors?.['required']">PinCode required</small>
+            <small *ngIf="UserReg.get('pincode')?.errors?.['minlength']">Minimum length 6</small>
+         </div>
+        Address : <textarea rows="4" cols="40" name="Address" formControlName="address"></textarea>
+        <div *ngIf="UserReg.get('address')?.invalid && UserReg.get('address')?.touched" style="color: red;">
+            <small *ngIf="UserReg.get('address')?.errors?.['required']">address required</small>
+         </div>  
+    </div>
+    <div >
+    <button class="button" type="submit" [disabled]="UserReg.invalid">Submit</button> 
+    </div>
+</form>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>

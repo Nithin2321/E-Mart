@@ -1,0 +1,27 @@
+<div>
+    <app-header></app-header>
+</div>
+<div class="products py-5" >
+    <h2 class="text-center mb-4">Our Products</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 products1">
+        <!-- Product 1 -->
+        <div *ngFor="let productList of productList"> 
+        <div class="col" > 
+            <div class=" card cards shadow-sm">
+                <img [src]="productList.imageUrl" class="card-img-top cardimg" alt="Product 1" [routerLink]="['/productdetails',productList.id]" routerLinkActive="router-link-active" >
+                <div class="card-body">
+                    <h5 class="card-title title">{{ productList.title}}</h5>
+                    <p class="card-text description">{{ productList.description}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="h5 mb-0">{{ productList.price | currency :"USD"}}</span>
+                        <button class="btn btn-outline-primary" (click)="addtocart(productList.id)" routerLinkActive="router-link-active" >Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div>
+    <app-footer></app-footer>
+</div>

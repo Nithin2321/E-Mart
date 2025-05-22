@@ -1,0 +1,39 @@
+<div>
+  <app-header></app-header>
+</div>
+<div class="cart">
+   <div class="container mt-4">
+      <h3>Your Cart</h3>
+      <table class="table table-bordered mt-3" *ngIf=" cartList.length > 0; else emptyCart">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of  cartList">
+            <td>{{ item.product.name }}</td>
+            <td><img [src]="item.product.imageUrl" width="60"></td>
+            <td>₹{{ item.product.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>₹{{ item.quantity * item.product.price }}</td>
+            <td><button class="btn btn-danger btn-sm" (click)="remove(item.product.id)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #emptyCart>
+        <p>Your cart is empty.</p>
+      </ng-template>
+      <div *ngIf=" cartList.length > 0" class="mt-3">
+        <button class="btn btn-success" (click)="placeOrder()" >Place Order</button>
+      </div>
+    </div>
+</div>
+<div>
+   <app-footer></app-footer>
+</div>

@@ -1,0 +1,45 @@
+.img{
+    width: 100%;
+    height: 80vh;
+}
+.products{
+    background-color: #F6F6F6;
+    width: 100%;
+}
+.products1{
+    padding: 10px;   
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px; 
+}
+.cards:hover {
+    border: 3px solid rgba(0, 0, 0, 0.233);
+    transform: scale(1.05);
+}
+.cardimg{
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+}
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title{
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

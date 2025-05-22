@@ -1,0 +1,95 @@
+.productsdet{
+    background-color: #F6F6F6;
+}
+.container-details{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: auto;
+    height: 65vh;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+.imgsection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+.imgsection:hover{
+    border: 3px solid rgba(0, 0, 0, 0.233);
+    transform: scale(1.05); /* Optional: Slight zoom effect */
+}
+.image{
+    border-radius: 20px;
+    width: 450px;
+    height: 50vh;
+}
+.productdetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 700px;
+    gap: 10px;
+    margin-left:100px;
+    padding: 0;
+}
+.title{
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns{
+    display: flex;
+    justify-content:center;
+    gap: 20px;
+    align-items: flex-start;
+}
+a{
+   float: left;
+}
+/* Releated products */
+.products{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.products1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;   
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    padding: 20px;
+    background: white; /* Ensure background doesn't blend */
+    border-radius: 10px; /* Add rounded corners */
+   
+}
+.cards:hover {
+    border: 3px solid rgba(0, 0, 0, 0.233);
+    transform: scale(1.05); /* Optional: Slight zoom effect */
+}
+.cardimg{
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+}
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+

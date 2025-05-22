@@ -1,0 +1,35 @@
+.user{
+    height: auto;
+   background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+.top{
+    display: flex;
+    width: 60%;
+    gap:60%;
+    align-items:center;
+}
+.table, thead, tbody{
+    width: 60%;
+    border: 1px solid black;
+}
+th,td{
+    border: 1px solid black; 
+}
+img{
+    height: 10vh;
+    width: 100px;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover{
+  background-color: red;
+  font-size: larger;
+}

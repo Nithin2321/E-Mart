@@ -1,0 +1,82 @@
+.login_component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+form {
+    padding: 20px 40px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px); /* Optional for a frosted-glass look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* ✅ Corrected syntax */
+    border-radius: 20px;
+    height: auto;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login_component__header{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.formfields{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+}
+input{
+    height: 3.5vh;
+    width: 300px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.178);
+}
+.button{
+   background-color: blue;
+   color: white;
+   font-size: large;
+   display: flex;
+   width: 110%;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 10px;
+}
+.font_icons{
+    margin-top: 5px;
+}
+i{
+   display: inline;
+   margin-right: 20px;
+   font-size: large;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-model{
+    height: auto;
+    width: auto;
+    border: none;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}

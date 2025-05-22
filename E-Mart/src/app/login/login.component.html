@@ -1,0 +1,69 @@
+<div>
+  <app-header></app-header>
+</div>
+<!-- Login Form Container -->
+<div class="login_component">
+  <form method="post" [formGroup]="loginUser" (ngSubmit)="onSubmit()">
+    <div class="login_component__header">
+      <h2>Login</h2>
+    </div>
+    <div class="formfields">
+       Email/Phone:<input type="text" placeholder="Enter Email/Phone No." formControlName="email"/>
+       <div *ngIf="loginUser.get('email')?.invalid && loginUser.get('email')?.touched">
+        <small *ngIf="loginUser.get('email')?.errors?.['required']" style="color: red;">Email is required</small>
+       </div>
+       Password:<input type="password" placeholder="Password" formControlName="password" />
+       <div *ngIf="loginUser.get('password')?.invalid && loginUser.get('password')?.touched">
+        <small *ngIf="loginUser.get('password')?.errors?.['required']" style="color: red;">Password is required</small>
+        <small *ngIf="loginUser.get('password')?.errors?.['minlength']" style="color: red;">Minimum Length is 8</small>
+       </div>
+    </div>
+    <div>
+      <button class="button" type="submit" [disabled]="loginUser.invalid">Login</button>
+    </div>
+    <div>
+      <span>For New Registeration-<a routerLink="/register">Click Here</a></span
+      ><br />
+      <span>Forgot Passwors-<a routerLink="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >Click To Reset</a></span>
+    </div>
+    <hr style="width: 50%; margin-top: 10px" />
+    <!-- Other Login Icons  -->
+    <div class="font_icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-google"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+    </div>
+  </form>
+</div>
+<!-- Model Section for Reset password  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reset Password</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form class="form-model">  
+          <label for="mobileNumber">Mobile Number:</label>
+          <input type="text" id="mobileNumber" placeholder="Enter Registered Mobile Number"/>
+          <label for="otp">OTP:</label>
+          <input type="text" id="otp" placeholder="Enter OTP" required />
+          <span><a href="#">Resend OTP</a></span>
+          <label for="newPassword">New Password:</label>
+          <input type="password" id="newPassword" placeholder="Enter New Password" required />
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+        </form>
+        <div>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer>

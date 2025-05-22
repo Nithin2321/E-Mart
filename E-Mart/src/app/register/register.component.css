@@ -1,0 +1,66 @@
+.register_component{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url("https://img.freepik.com/free-photo/black-friday-sales-sign-neon-light_23-2151833076.jpg?semt=ais_hybrid&w=740"); */
+    background-image: url("https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 110vh;
+}
+.register_component__header{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 30px;
+    color: #160c0c;
+    background-color: rgba(255, 255, 255, 0.15); /* Light frosted background */
+    backdrop-filter: blur(8px); /* Optional glass effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.formfields{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;  
+}
+input{
+    height: 3.5vh;
+    width: 350px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border: none;
+   background-color: rgba(0, 0, 0, 0.178);
+}
+.button{
+    color: rgb(10, 5, 5);
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(236, 239, 237);
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.button:hover{
+    background-color: rgba(236, 238, 239, 0.532);
+}
+
+

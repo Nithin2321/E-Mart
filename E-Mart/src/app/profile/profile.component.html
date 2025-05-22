@@ -1,0 +1,50 @@
+<div>
+    <app-header></app-header>
+  </div>
+  <div class="profile">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Hi {{ name }}</h5>
+        <h6 class="card-subtitle mb-4  text-center">Profile Details</h6>
+        <form>
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-3 col-form-label text-right">Name</label>
+            <div class="col-sm-6">
+              <input type="text" readonly class="form-control-plaintext" [value]="name">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-3 col-form-label text-right">Email</label>
+            <div class="col-sm-6">
+              <input type="text" readonly class="form-control-plaintext" [value]="email">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-3 col-form-label text-right">Phone</label>
+            <div class="col-sm-6">
+              <input type="text" readonly class="form-control-plaintext" [value]="phone">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-3 col-form-label text-right">Pin Code</label>
+            <div class="col-sm-6">
+              <input type="text" readonly class="form-control-plaintext" [value]="pincode">
+            </div>
+          </div>
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-3 col-form-label text-right">Address</label>
+            <div class="col-sm-6">
+              <input type="text" readonly class="form-control-plaintext" [value]="address">
+            </div>
+          </div>
+        </form>
+        <div class="text-center mt-3">
+          <button class="btn btn-outline-primary mx-2">Edit</button>
+          <button *ngIf="isEdit" class="btn btn-outline-success mx-2">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<footer>
+    <app-footer></app-footer>
+  </footer>

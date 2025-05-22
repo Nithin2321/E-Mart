@@ -1,0 +1,29 @@
+<div>
+    <app-header></app-header>
+</div>
+<div class="user">
+    <h2>USER DETAILS</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">GMAIL</th>
+        <th scope="col">ROLE</th>
+        <th scope="col">Remove User</th>
+      </tr>
+    </thead>
+    <tbody >
+      <ng-container *ngFor="let user of users" >
+      <tr *ngIf="user.role !='ADMIN' ">
+        <td>{{ user.name}}</td>
+        <td>{{ user.email}}</td>
+        <td>{{ user.role}}</td>
+        <td><button (click)="remove(user)">Remove</button></td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+  </div>
+<footer>
+    <app-footer></app-footer>
+</footer>

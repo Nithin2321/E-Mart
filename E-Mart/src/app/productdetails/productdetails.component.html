@@ -1,0 +1,47 @@
+<div>
+    <app-header>
+    </app-header>
+</div>
+<div class="productsdet">
+<div class="container-details">
+    <div class="imgsection">
+        <img [src]="imageUrl" class="image"/>
+    </div>
+    <div class="productdetails">
+        <div class="title">
+            <h2>{{ name }}</h2>
+        </div>
+        <h4>Description :</h4>
+        <p class="Discription">{{ description }}</p>
+        <h4>Price : {{ price | currency:'USD':'symbol' }}</h4>   
+    <div class="btns">
+        <button class="btn btn-outline-primary" (click)="addtocart(id)" >Add to Cart</button>
+    </div>
+    </div>
+   </div>
+</div>
+<!-- Releated products -->
+<div class="container products py-5">
+    <h2 class="text-center mb-4">Releated Products</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 products1"> 
+        <!-- Product 1 -->
+        <div *ngFor="let productList of releatedproduct"> 
+        <div class="col">
+            <div class=" card cards shadow-sm">
+                <img [src]="productList.imageUrl" class="card-img-top cardimg" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">{{ productList.name }}</h5>
+                    <p class="card-text description">{{ productList.description}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a [routerLink]="['/productdetails',productList.id]" class="btn btn-outline-primary">Know More</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div> 
+<footer>
+    <app-footer></app-footer>
+</footer>

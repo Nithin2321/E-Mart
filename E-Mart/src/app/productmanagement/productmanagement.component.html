@@ -1,0 +1,90 @@
+<div>
+    <app-header></app-header>
+</div>
+<div class="user">
+  <div class="top">
+    <h2>List of Products</h2>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Add Product
+</button>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="productForm" [formGroup]="newproduct" (ngSubmit)="onSubmit()" method="post">
+          <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="productName" name="name" formControlName="name" >
+            <span *ngIf="newproduct.get('name')?.touched && newproduct.get('name')?.invalid" class="text-danger">
+              Name is required.
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="productCategory" class="form-label">Category</label>
+            <input type="text" class="form-control" id="productCategory" name="category" formControlName="category" >
+            <span *ngIf="newproduct.get('category')?.touched && newproduct.get('category')?.invalid" class="text-danger">
+              category is required.
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="productDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="productDescription" name="description" rows="3" formControlName="description" ></textarea>
+            <span *ngIf="newproduct.get('description')?.touched && newproduct.get('description')?.invalid" class="text-danger">
+              description is required.
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price</label>
+            <input type="number" step="0.01" class="form-control" id="productPrice" formControlName="price" name="price" >
+            <span *ngIf="newproduct.get('price')?.touched && newproduct.get('price')?.invalid" class="text-danger">
+              price is required.
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="productImageUrl" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="productImageUrl" name="imageUrl" formControlName="imageUrl" >
+            <span *ngIf="newproduct.get('imageUrl')?.touched && newproduct.get('imageUrl')?.invalid" class="text-danger">
+              Name is required.
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" form="productForm" class="btn btn-primary" [disabled]="newproduct.invalid" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Remove Product</th>
+      </tr>
+    </thead>
+    <tbody >
+      <ng-container *ngFor="let item of productList">
+      <tr>
+        <td><img [src]="item.imageUrl"></td>
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price | currency:'USD':'symbol' }}</td>
+        <td><button (click)="remove(item)">Remove</button></td>
+      </tr>
+</ng-container>
+    </tbody>
+  </table>
+  </div>
+<footer>
+    <app-footer></app-footer>
+</footer>

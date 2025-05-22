@@ -1,0 +1,24 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+    background-image: url("https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdhbGxwYXBlciUyMDRrfGVufDB8fDB8fHww");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .card {
+    width: 50%;
+    color:black;
+    font-size: larger;
+    background-color: rgba(251, 251, 251, 0.229);
+    border-radius: 10px;
+  }
+  input{
+    color:black;
+  }
+  .btn{
+    background-color: red;
+    color: black;
+  }
